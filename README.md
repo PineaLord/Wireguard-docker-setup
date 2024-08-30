@@ -10,13 +10,13 @@ To run `Wireguard GUI` with Docker, use the following command:
 docker run -d \
   --name=wg-easy \
   -e LANG=en \
-  -e WG_HOST= <public-IP>\
+  -e WG_HOST= <public-IP> \
   -e PASSWORD_HASH=<pass> \
   -e PORT=51821 \
   -e WG_PORT=51820 \
   -e WG_DEVICE=enp1s0 \
   -e WEBUI_HOST=<server-IP> \
-  -e WG_ALLOWED_IPS=0.0.0.0/0, ::/0, 192.168.1.0/24, 10.8.0.0/24, 172.17.0.0/16 \
+  -e WG_ALLOWED_IPS="0.0.0.0/0, ::/0, 192.168.1.0/24, 10.8.0.0/24, 172.17.0.0/16" \
   -v ~/.wg-easy:/etc/wireguard \
   --network host \
   --cap-add=NET_ADMIN \
